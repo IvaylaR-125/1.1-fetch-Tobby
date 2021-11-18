@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="en"><head>
+    <script src="p5.js"></script>
+    <script src="p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+
+  </head>
+  <body>
+<!--     <script src="sketch.js"></script> -->
+    <img src="" id="Tobby" width="550">
+    <script>
+      console.log('about to catch Tobby');
+      
+      catchTobby()
+      .then(response => {
+        console.log('we did it');
+      })
+      .catch(error =>{
+        console.log('error!');
+        console.error(error);
+      });
+      async function catchTobby() {
+        const response = await fetch('Тоби - Короната на София.jpg');
+        const blob = await response.blob();
+        document.getElementById('Tobby').src = URL.createObjectURL(blob);
+      }
+    </script>
+  
+
+</body></html>
